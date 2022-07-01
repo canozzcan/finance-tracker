@@ -1,17 +1,24 @@
-import { NavLink } from 'react-router-dom'
+import { Link } from "react-router-dom"
+import { useLogout } from '../hooks/useLogout'
 
-//styles
+// styles
 import styles from './Navbar.module.css'
 
 export default function Navbar() {
-    return (
-        <nav className={styles.navbar}>
-            <ul>
-                <li className={styles.title}>Finance Tracker</li>
+  const { logout } = useLogout()
 
-                <li><NavLink to="/login">Login</NavLink></li>
-                <li><NavLink to="/signup">Signup</NavLink></li>
-            </ul>
-        </nav>
-    )
+  return (
+    <nav className={styles.navbar}>
+      <ul>
+        <li className={styles.title}>myMoney</li>
+        
+        <li><Link to="/login">Login</Link></li>
+        <li><Link to="/signup">Signup</Link></li>
+
+        <li>
+          <button className="btn" onClick={logout}>Logout</button>
+        </li>
+      </ul>
+    </nav>
+  )
 }
