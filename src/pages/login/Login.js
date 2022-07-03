@@ -16,9 +16,9 @@ export default function Login() {
 
   return (
     <form onSubmit={handleSubmit} className={styles['login-form']}>
-      <h2>login</h2>
+      <h2>Login</h2>
       <label>
-        <span>email:</span>
+        <span>Email:</span>
         <input 
           type="email" 
           onChange={(e) => setEmail(e.target.value)} 
@@ -26,7 +26,7 @@ export default function Login() {
         />
       </label>
       <label>
-        <span>password:</span>
+        <span>Password:</span>
         <input 
           type="password" 
           onChange={(e) => setPassword(e.target.value)} 
@@ -34,7 +34,7 @@ export default function Login() {
         />
       </label>
       { !isPending && <button className="btn">Login</button> }
-      { isPending && <button className="btn" disabled>loading</button> }
+      { isPending && <button className="btn" disabled>Loading...</button> }
       { error && <p>{error}</p> }
     </form>
   )
